@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery - Nome Clay</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="gallery-page">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="index.html" class="site-name">Nome Clay</a>
+    <nav class="site-nav">
+      <a href="gallery.html">Work</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Open menu">☰</button>
+  </header>
+
+  <!-- MOBILE NAV OVERLAY -->
+  <div class="nav-overlay" id="navOverlay">
+    <button class="nav-close" id="navClose">✕</button>
+    <nav class="overlay-nav">
+      <a href="gallery.html">Work</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-img-wrap">
+        <a href="images/IMG_0790.JPG">
+          <img src="images/IMG_0790.JPG" alt="Gallery hero" />
+        </a>
+      </div>
+      <div class="hero-nav-content">
+        <div class="shop-page-text">
+          <h1 class="site-name">Gallery</h1>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-section">
+      <div class="gallery-grid">
+
+        <a href="gallery-piece-1.html" class="gallery-card">
+          <div class="work-img-wrap">
+            <img src="images/work-1.jpg" alt="Glazed Bowl Set" />
+          </div>
+          <div class="work-meta">
+            <span class="work-title">Glazed Bowl Set</span>
+            <span class="work-year">2026</span>
+          </div>
+        </a>
+
+        <a href="gallery-piece-2.html" class="gallery-card">
+          <div class="work-img-wrap">
+            <img src="images/work-2.jpg" alt="Sculptural Vessel" />
+          </div>
+          <div class="work-meta">
+            <span class="work-title">Sculptural Vessel</span>
+            <span class="work-year">2026</span>
+          </div>
+        </a>
+
+        <a href="gallery-piece-3.html" class="gallery-card">
+          <div class="work-img-wrap">
+            <img src="images/work-3.jpg" alt="Plate Series" />
+          </div>
+          <div class="work-meta">
+            <span class="work-title">Plate Series</span>
+            <span class="work-year">2025</span>
+          </div>
+        </a>
+
+        <a href="gallery-piece-4.html" class="gallery-card">
+          <div class="work-img-wrap">
+            <img src="images/work-4.jpg" alt="Form Study" />
+          </div>
+          <div class="work-meta">
+            <span class="work-title">Form Study</span>
+            <span class="work-year">2025</span>
+          </div>
+        </a>
+
+        <a href="gallery-piece-5.html" class="gallery-card">
+          <div class="work-img-wrap">
+            <img src="images/work-1.jpg" alt="Tall Vase" />
+          </div>
+          <div class="work-meta">
+            <span class="work-title">Tall Vase</span>
+            <span class="work-year">2026</span>
+          </div>
+        </a>
+
+        <a href="gallery-piece-6.html" class="gallery-card">
+          <div class="work-img-wrap">
+            <img src="images/work-2.jpg" alt="Mug Pair" />
+          </div>
+          <div class="work-meta">
+            <span class="work-title">Mug Pair</span>
+            <span class="work-year">2026</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contact">
+    <div class="footer-left">
+      <span class="footer-name">Nome Clay</span>
+      <span class="footer-location">Bristol, UK</span>
+    </div>
+    <div class="footer-right">
+      <a href="https://instagram.com/nomeclay" target="_blank" rel="noopener">Instagram</a>
+      <a href="mailto:hello@nomeclay.com">hello@nomeclay.com</a>
+    </div>
+    <div class="footer-copy">© 2026</div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const overlay = document.getElementById('navOverlay');
+    const close = document.getElementById('navClose');
+    const header = document.querySelector('.site-header');
+    const hero = document.querySelector('.hero');
+
+    toggle.addEventListener('click', () => overlay.classList.add('open'));
+    close.addEventListener('click', () => overlay.classList.remove('open'));
+    overlay.querySelectorAll('a').forEach(a => a.addEventListener('click', () => overlay.classList.remove('open')));
+
+    window.addEventListener('scroll', () => {
+      const heroHeight = hero.offsetHeight;
+      const scrollY = window.scrollY;
+      if (scrollY > heroHeight * 0.3) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
+
+</body>
+</html>

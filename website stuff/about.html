@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - Nome Clay</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="about-page">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="index.html" class="site-name">Nome Clay</a>
+    <nav class="site-nav">
+      <a href="gallery.html">Work</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Open menu">☰</button>
+  </header>
+
+  <!-- MOBILE NAV OVERLAY -->
+  <div class="nav-overlay" id="navOverlay">
+    <button class="nav-close" id="navClose">✕</button>
+    <nav class="overlay-nav">
+      <a href="gallery.html">Work</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-img-wrap">
+        <a href="images/8b1df897-56ff-423f-974f-ea596afb69fe.JPG">
+          <img src="images/8b1df897-56ff-423f-974f-ea596afb69fe.JPG" alt="Nome Clay ceramic work" />
+        </a>
+      </div>
+      <div class="hero-nav-content about-hero-content">
+        <div class="about-page-text">
+          <h1 class="site-name">About</h1>
+          <p>Working from my studio in Spike Island in Bristol- I have been working as a self taught ceramic artist for around a year, working on process, intuition and the joy of making things. I have been recently infatuated with pottery, functional and decorative stuff. Vases, cups, mugs, bowls. I mix glazes to create different colours and textures- decorating based on inspiration from research and often mark making based off of intuition.  I love ceramics however I feel a change in direction coming round the corner. I also have my own art practice outside of cermaics- see my instagram 'Nomechomsky'. </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contact">
+    <div class="footer-left">
+      <span class="footer-name">Nome Clay</span>
+      <span class="footer-location">Bristol, UK</span>
+    </div>
+    <div class="footer-right">
+      <a href="https://instagram.com/nomeclay" target="_blank" rel="noopener">Instagram</a>
+      <a href="mailto:hello@nomeclay.com">hello@nomeclay.com</a>
+    </div>
+    <div class="footer-copy">© 2026</div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const overlay = document.getElementById('navOverlay');
+    const close = document.getElementById('navClose');
+    const header = document.querySelector('.site-header');
+    const hero = document.querySelector('.hero');
+    
+    toggle.addEventListener('click', () => overlay.classList.add('open'));
+    close.addEventListener('click', () => overlay.classList.remove('open'));
+    overlay.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => overlay.classList.remove('open'));
+    });
+
+    // Scroll effect for header title
+    window.addEventListener('scroll', () => {
+      const heroHeight = hero.offsetHeight;
+      const scrollY = window.scrollY;
+      
+      // Add scrolled class for styling changes
+      if (scrollY > heroHeight * 0.3) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
+
+</body>
+</html>

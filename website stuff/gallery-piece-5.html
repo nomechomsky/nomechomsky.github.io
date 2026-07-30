@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tall Vase - Nome Clay</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="index.html" class="site-name">Nome Clay</a>
+    <nav class="site-nav">
+      <a href="gallery.html">Work</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Open menu">☰</button>
+  </header>
+
+  <div class="nav-overlay" id="navOverlay">
+    <button class="nav-close" id="navClose">✕</button>
+    <nav class="overlay-nav">
+      <a href="gallery.html">Work</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+
+  <main class="detail-section">
+    <a href="gallery.html" class="back-link">← Back to gallery</a>
+    <div class="detail-grid">
+      <div class="work-img-wrap">
+        <img src="images/work-1.jpg" alt="Tall Vase" />
+      </div>
+      <div class="detail-copy">
+        <span class="work-title">Tall Vase</span>
+        <p>This tall hand-formed vase has an elegant silhouette and soft glaze variations. It is designed as a sculptural statement piece for a shelf or tabletop.</p>
+        <p>The piece is finished with a subtle sheen and minimal detailing to keep the ceramic form the focal point.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="footer-left">
+      <span class="footer-name">Nome Clay</span>
+      <span class="footer-location">Bristol, UK</span>
+    </div>
+    <div class="footer-right">
+      <a href="https://instagram.com/nomeclay" target="_blank" rel="noopener">Instagram</a>
+      <a href="mailto:hello@nomeclay.com">hello@nomeclay.com</a>
+    </div>
+    <div class="footer-copy">© 2026</div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const overlay = document.getElementById('navOverlay');
+    const close = document.getElementById('navClose');
+    const header = document.querySelector('.site-header');
+    const hero = document.querySelector('.hero');
+
+    toggle.addEventListener('click', () => overlay.classList.add('open'));
+    close.addEventListener('click', () => overlay.classList.remove('open'));
+    overlay.querySelectorAll('a').forEach(a => a.addEventListener('click', () => overlay.classList.remove('open')));
+
+    window.addEventListener('scroll', () => {
+      if (!hero) return;
+      const heroHeight = hero.offsetHeight;
+      const scrollY = window.scrollY;
+      if (scrollY > heroHeight * 0.3) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
+
+</body>
+</html>
