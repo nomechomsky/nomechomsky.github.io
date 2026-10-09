@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clay Study - noah cole</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="index.html" class="site-name">noah cole</a>
+    <nav class="header-nav">
+      <a href="../../gallery.html">Gallery</a>
+      <a href="../../about.html">About</a>
+      <a href="../../shop.html">Shop</a>
+    </nav>
+    <nav class="site-nav">
+      <a href="gallery.html">Work</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Open menu">☰</button>
+  </header>
+
+  <div class="nav-overlay" id="navOverlay">
+    <button class="nav-close" id="navClose">✕</button>
+    <nav class="overlay-nav">
+      <a href="gallery.html">Work</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+
+  <main class="detail-section">
+    <a href="gallery.html" class="back-link">← Back to gallery</a>
+    <div class="detail-layout">
+      <div class="detail-feature">
+        <div class="work-img-wrap">
+          <img src="https://res.cloudinary.com/c3vouege/image/upload/f_auto/q_auto/Ceramics146.jpg" alt="Clay Study" />
+        </div>
+        <div class="detail-rail">
+          <a href="images/IMG_0790.JPG"><img src="https://res.cloudinary.com/c3vouege/image/upload/f_auto/q_auto/IMG_0790.JPG" alt="Related work 1" /></a>
+          <a href="images/IMG_0803.JPG"><img src="https://res.cloudinary.com/c3vouege/image/upload/f_auto/q_auto/IMG_0803.JPG" alt="Related work 2" /></a>
+          <a href="images/8b1df897-56ff-423f-974f-ea596afb69fe.JPG"><img src="https://res.cloudinary.com/c3vouege/image/upload/f_auto/q_auto/8b1df897-56ff-423f-974f-ea596afb69fe.JPG" alt="Related work 3" /></a>
+        </div>
+      </div>
+      <div class="detail-copy">
+        <span class="work-title">Untitled</span>
+        <div class="detail-meta">
+          <span>2025</span>
+          <span>Study</span>
+        </div>
+        <p>A close study of weight, contour, and the material qualities of fired clay. The work is deliberately reduced to its essentials, so the structure and surface remain central.</p>
+        <p>Its quiet palette and sculptural shape make it a useful counterpoint to the more overtly expressive works in the collection.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="footer-left">
+      <span class="footer-name">noah cole</span>
+      <span class="footer-location">Bristol, UK</span>
+    </div>
+    <div class="footer-right">
+      <a href="https://instagram.com/nomeclay" target="_blank" rel="noopener">nome clay</a>
+      <a href="https://instagram.com/nomechomsky" target="_blank" rel="noopener">nome chomsky</a>
+      <a href="mailto:noahcole254@gmail.com">noahcole254@gmail.com</a>
+    </div>
+    <div class="footer-copy">© 2026</div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const overlay = document.getElementById('navOverlay');
+    const close = document.getElementById('navClose');
+    const header = document.querySelector('.site-header');
+    const hero = document.querySelector('.hero');
+
+    if (toggle && overlay && close) {
+      toggle.addEventListener('click', () => overlay.classList.add('open'));
+      close.addEventListener('click', () => overlay.classList.remove('open'));
+      overlay.querySelectorAll('a').forEach(a => a.addEventListener('click', () => overlay.classList.remove('open')));
+
+        // Set active page indicator in header nav
+    const headerNavLinks = document.querySelectorAll('.header-nav a');
+    headerNavLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href.includes('gallery.html')) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!hero) return;
+      const heroHeight = hero.offsetHeight;
+      const scrollY = window.scrollY;
+      if (scrollY > heroHeight * 0.3) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
+
+</body>
+</html>

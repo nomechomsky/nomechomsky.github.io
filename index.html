@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>noah cole</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="index.html" class="site-name">noah cole</a>
+    </nav>
+    <nav class="site-nav">
+      <a href="gallery.html">Work</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Open menu">☰</button>
+  </header>
+
+  <!-- MOBILE NAV OVERLAY -->
+  <div class="nav-overlay" id="navOverlay">
+    <button class="nav-close" id="navClose">✕</button>
+    <nav class="overlay-nav">
+      <a href="gallery.html">Work</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-img-wrap">
+        <a href="images/6prints2.jpeg ">
+          <img src="https://res.cloudinary.com/c3vouege/image/upload/f_auto/q_auto/6prints2.jpeg" alt="I have never been punched in the face - Video Still by noah cole" />
+        </a>
+      </div>
+      <div class="hero-nav-content">
+        <nav class="hero-nav">
+          <a href="gallery.html" class="hero-nav-link">Gallery</a>
+          <a href="shop.html" class="hero-nav-link">Shop</a>
+          <a href="about.html" class="hero-nav-link">About</a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ABOUT STRIP -->
+    <section class="about-strip">
+      <div class="about-img-wrap">
+        <a href="images/studio.jpeg">
+          <img src="https://res.cloudinary.com/c3vouege/image/upload/f_auto/q_auto/studio.jpeg" alt="Studio shot" />
+        </a>
+      </div>
+      <div class="about-text">
+        Bristol based multidisciplinary artist, working across film, sculpture, and installation.
+        <a href="about.html" class="text-link">more about noah cole →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contact">
+    <div class="footer-left">
+      <span class="footer-name">noah cole</span>
+      <span class="footer-location">Bristol, UK</span>
+    </div>
+    <div class="footer-right">
+      <a href="https://instagram.com/nomeclay" target="_blank" rel="noopener">nome clay</a>
+      <a href="https://instagram.com/nomechomsky" target="_blank" rel="noopener">nome chomsky</a>
+      <a href="mailto:noahcole254@gmail.com">noahcole254@gmail.com</a>
+    </div>
+    <div class="footer-copy">© 2026</div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const overlay = document.getElementById('navOverlay');
+    const close = document.getElementById('navClose');
+    const header = document.querySelector('.site-header');
+    const hero = document.querySelector('.hero');
+    
+    toggle.addEventListener('click', () => overlay.classList.add('open'));
+    close.addEventListener('click', () => overlay.classList.remove('open'));
+    overlay.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => overlay.classList.remove('open'));
+    });
+
+    // Scroll effect for header title
+    window.addEventListener('scroll', () => {
+      const heroHeight = hero.offsetHeight;
+      const scrollY = window.scrollY;
+      
+      // Add scrolled class for styling changes
+      if (scrollY > heroHeight * 0.3) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Set active page indicator in header nav
+    const headerNavLinks = document.querySelectorAll('.header-nav a');
+    const currentPath = window.location.pathname;
+    
+    headerNavLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      // Check if current page matches this link
+      if (currentPath.includes('index.html') || currentPath.endsWith('/')) {
+        // Homepage - no active state
+        link.classList.remove('active');
+      }
+    });
+  </script>
+
+</body>
+</html>

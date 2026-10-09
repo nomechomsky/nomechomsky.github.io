@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Scaled Vase - noah cole</title>
+    <link rel="stylesheet" href="../../style.css">
+  </head>
+  <body class="shop-piece-page">
+    <header class="site-header">
+      <a href="../../index.html" class="site-name">noah cole</a>
+    <nav class="header-nav">
+      <a href="../../gallery.html">Gallery</a>
+      <a href="../../about.html">About</a>
+      <a href="../../shop.html">Shop</a>
+    </nav>
+    <nav class="site-nav">
+        <a href="../../gallery.html">Work</a>
+        <a href="../../shop.html">Shop</a>
+        <a href="../../about.html">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Open menu">&#9776;</button>
+    </header>
+    <div class="nav-overlay" id="navOverlay">
+      <button class="nav-close" id="navClose">&#10005;</button>
+      <nav class="overlay-nav">
+        <a href="../../gallery.html">Work</a>
+        <a href="../../shop.html">Shop</a>
+        <a href="../../about.html">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <main class="detail-section">
+      <a href="../../shop.html" class="back-link">&larr; Back to shop</a>
+      <div class="detail-layout">
+        <div class="detail-feature">
+          <div class="work-img-wrap">
+            <img src="https://res.cloudinary.com/c3vouege/image/upload/f_auto/q_auto/0G1A5145.jpg" alt="Scaled Vase">
+          </div>
+        </div>
+        <div class="detail-copy">
+          <span class="work-title">Scaled Vase</span>
+          <div class="product-info">
+            <div class="info-section">
+              <h3>Description</h3>
+              <p>Hand-thrown stoneware vase with unique glaze finish. Each piece is kiln-fired with unique surface variations for a truly handmade feel.</p>
+            </div>
+            <div class="info-section">
+              <h3>Measurements</h3>
+              <p>Height: [add measurement]<br />Diameter/Width: [add measurement]<br />Capacity: [add capacity]</p>
+            </div>
+          </div>
+          <span class="shop-price">£50</span>
+          <button class="shop-btn">Buy Now</button>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer" id="contact">
+      <div class="footer-left">
+        <span class="footer-name">noah cole</span>
+        <span class="footer-location">Bristol, UK</span>
+      </div>
+      <div class="footer-right">
+      <a href="https://instagram.com/nomeclay" target="_blank" rel="noopener">nome clay</a>
+      <a href="https://instagram.com/nomechomsky" target="_blank" rel="noopener">nome chomsky</a>
+      <a href="mailto:noahcole254@gmail.com">noahcole254@gmail.com</a>
+    </div>
+      <div class="footer-copy">&copy; 2026</div>
+    </footer>
+    <script>const toggle=document.querySelector('.nav-toggle'),overlay=document.getElementById('navOverlay'),close=document.getElementById('navClose');toggle.onclick=()=>overlay.classList.add('open');close.onclick=()=>overlay.classList.remove('open');overlay.querySelectorAll('a').forEach(a=>a.onclick=()=>overlay.classList.remove('open'));</script>
+  </body>
+</html>
